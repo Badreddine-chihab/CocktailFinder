@@ -1,6 +1,5 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+##Project Overview
+Have you ever drank something in a Bar or a Cafe and craved it so bad you wanted to make it at home. In This Website, You'll be able to find the igredients and the way to make your favorite drink .
 
 ## Available Scripts
 
@@ -68,3 +67,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+##Project Overview
+Have you ever drank something in a Bar or a Cafe and craved it so bad you wanted to make it at home. In This Website, You'll be able to find the igredients and the way to make your favorite drink .
