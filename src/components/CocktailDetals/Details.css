@@ -17,11 +17,13 @@ body{
     font-size: 60px;
     letter-spacing: 3px;
     color: rgb(255, 189, 96);
+    margin-top: 40px;
 }
 .p1{
     font-size: 20px;
     font-family: 'Phudu', cursive;
-    padding-bottom: 10px;
+    padding: 15px;
+    letter-spacing: 3px;
 }
 #Ins{
     color:rgb(255, 189, 96);
@@ -32,6 +34,11 @@ body{
 .p2{
     text-indent: 20px;
     font-size: 25px;
+    padding-top: 10px;
+}
+.p3{
+    padding-top: 19px;
+    
 }
 .Details img{
     width: 230px;
@@ -41,7 +48,9 @@ body{
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    padding: 40px;
+    padding: 1px;
+    margin: 40px;
+    box-shadow: 1px 3px  10px 1px rgba(255, 132, 0, 0.662);
 }
 .Details ul{
     display: flex;

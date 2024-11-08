@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div className="header">
 
-      <h1>Cocktail Details Finder</h1>
+      <h1>Cocktail Details <span>Finder</span></h1>
 
       <div className='nav'>
           <ul>

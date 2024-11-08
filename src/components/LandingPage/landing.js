@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 
 const Landing = () => {
   const [cocktailName, setCocktailName] = useState('');
-  const [cocktailDetails, setCocktailDetails] = useState(null);
   const [suggestions, setSuggestions] = useState(null);
 
   const handleSearch = () => {
@@ -19,10 +18,8 @@ const Landing = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data.drinks && data.drinks.length > 0) {
-          setCocktailDetails(data.drinks[0]);
           setSuggestions(data.drinks);
         } else {
-          setCocktailDetails(null);
           setSuggestions([]);
           alert('Cocktail not found.');
         }
@@ -62,17 +59,20 @@ const Landing = () => {
             </svg>
           </button>
         </div>
+        <div className='suggestions-container'>
         {suggestions && (
           <ul className="suggestions">
             {suggestions.map((drink) => (
-              <li key={drink.idDrink}>
-                <Link to="/Details" state={{ cocktailDetails: drink, suggestions }}>
+              <li key={drink.idDrink} className='suggestion-dropdown'>
+                <Link className='suggestion-el' to="/Details" state={{ cocktailDetails: drink, suggestions }}>
                   {drink.strDrink}
                 </Link>
               </li>
             ))}
           </ul>
+        
         )}
+        </div>
       </div>
     </div>
   );

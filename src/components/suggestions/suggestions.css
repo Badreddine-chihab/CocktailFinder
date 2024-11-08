@@ -18,20 +18,24 @@
   
   .slide {
     margin-right: 20px; 
+    margin-top: 20px;
   }
   
   .sugg-img {
     height: 200px;
     width: 200px;
-    padding: 20px; 
+    padding: 1px; 
+    margin-inline: 10px;
+    box-shadow: 1px 3px  10px 1px rgba(255, 132, 0, 0.662);
   }
   
   .sugg-name {
     text-align: center;
-    font-family: 'Courier New', Courier, monospace;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: larger;
-    text-decoration: wavy; 
-    color: bisque;
+    text-decoration: none; 
+    color: rgb(2, 2, 2);
+    text-shadow: 1px 1px;
     flex-wrap: wrap;
     flex: 1;
   }
@@ -44,4 +48,8 @@
     margin: 0 10px;
     padding: 5px;
   }
-  
+  .slider-button:hover{
+    transition: .2s ease-in-out;
+    font-size: 30px;
+    padding: 3px;
+  }

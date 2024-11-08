@@ -1,4 +1,21 @@
-
+:root{
+    --bg : rgba(226, 84, 2, 0.542);
+    --off_white : rgb(255, 255, 240)
+}
+.header{
+    background-color:  var(--bg);
+    min-height: 110px;
+}
+.header h1 span{
+    color: rgb(46, 43, 43);
+}
+.header ul li a{
+    font-weight: bolder;
+}
+.header ul li a:hover{
+    color: rgb(46, 43, 43);
+    
+}
 @media (max-width: 767px) {
     .nav{
         display: flex;
