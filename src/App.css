@@ -1,0 +1,17 @@
+body{
+    width: auto;
+    height: auto;
+}
+/* Small screens (phones) */
+
+  
+  /* Medium screens (tablets) */
+  @media (min-width: 768px) and (max-width: 1023px) {
+    /* Add responsive styles here */
+  }
+  
+  /* Large screens (desktops) */
+  @media (min-width: 1024px) {
+    /* Add responsive styles here */
+  }
+  

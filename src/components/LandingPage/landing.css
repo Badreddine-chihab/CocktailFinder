@@ -1,0 +1,182 @@
+/* Reset default margin and padding for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: rgba(216, 0, 79, 0.81);
+    --dark-bg: rgba(0, 0, 0, 0.7);
+    --white: #fff;
+}
+
+body, html {
+    font-family: Arial, sans-serif;
+}
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url('../../assests/pexels-engin-akyurt-2531183.jpg') center/cover no-repeat;
+    color: var(--white);
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    background-color: var(--dark-bg);
+}
+
+.header h1 {
+    font-size: 36px;
+    color: var(--white);
+}
+
+.header h1 span {
+    color: var(--pink);
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav ul li a {
+    color: var(--white);
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    color: var(--pink);
+}
+
+/* Centering Content */
+.left_side {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.left_side label {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-container input {
+    flex: 1;
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid var(--pink);
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.search-container input:focus {
+    border-color: var(--white);
+}
+
+.search-container button {
+    background-color: var(--pink);
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: var(--white);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #b71c5d;
+}
+
+/* Dropdown Suggestions Styling */
+.suggestions-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid var(--pink);
+    border-radius: 5px;
+    background-color: var(--white);
+    color: #333;
+    margin-top: 5px;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.suggestions-dropdown li {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.suggestions-dropdown li:hover {
+    background-color: rgba(216, 0, 79, 0.1);
+}
+
+/* Cocktail Details Display */
+.details_info {
+    font-size: 20px;
+    color: var(--white);
+    background-color: var(--dark-bg);
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.details_info h2 {
+    font-size: 24px;
+    color: var(--pink);
+    margin-bottom: 10px;
+}
+
+.details_info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.button-52 {
+    display: inline-block;
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: 1px solid var(--pink);
+    color: var(--pink);
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.button-52:hover {
+    background-color: var(--pink);
+    color: var(--white);
+}
