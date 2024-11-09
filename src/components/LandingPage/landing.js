@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './landing.css';
 import { Link } from 'react-router-dom';
 
@@ -6,9 +6,10 @@ const Landing = () => {
   const [cocktailName, setCocktailName] = useState('');
   const [suggestions, setSuggestions] = useState(null);
 
+  // Debounced search function
   const handleSearch = () => {
     if (!cocktailName) {
-      alert('Please enter a cocktail name.');
+      setSuggestions(null); // Clear suggestions if input is empty
       return;
     }
 
@@ -21,12 +22,28 @@ const Landing = () => {
           setSuggestions(data.drinks);
         } else {
           setSuggestions([]);
-          alert('Cocktail not found.');
         }
       })
       .catch((error) => {
         console.error('Error fetching data:', error);
       });
+  };
+
+  // Debounce function to reduce API calls
+  const debounce = (func, delay) => {
+    let timeoutId;
+    return (...args) => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => func(...args), delay);
+    };
+  };
+
+  const debouncedSearch = debounce(handleSearch, 300); // 300ms delay
+
+  // Trigger search on input change
+  const handleChange = (e) => {
+    setCocktailName(e.target.value);
+    debouncedSearch(); // Call debounced search
   };
 
   return (
@@ -51,7 +68,7 @@ const Landing = () => {
             type="text"
             id="cocktail"
             value={cocktailName}
-            onChange={(e) => setCocktailName(e.target.value)}
+            onChange={handleChange}
           />
           <button type="button" onClick={handleSearch} className="btn">
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
@@ -60,18 +77,17 @@ const Landing = () => {
           </button>
         </div>
         <div className='suggestions-container'>
-        {suggestions && (
-          <ul className="suggestions">
-            {suggestions.map((drink) => (
-              <li key={drink.idDrink} className='suggestion-dropdown'>
-                <Link className='suggestion-el' to="/Details" state={{ cocktailDetails: drink, suggestions }}>
-                  {drink.strDrink}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        
-        )}
+          {suggestions && (
+            <ul className="suggestions">
+              {suggestions.map((drink) => (
+                <li key={drink.idDrink} className='suggestion-dropdown'>
+                  <Link className='suggestion-el' to="/Details" state={{ cocktailDetails: drink, suggestions }}>
+                    {drink.strDrink}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>
